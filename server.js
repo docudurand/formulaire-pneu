@@ -63,7 +63,7 @@ function generateHtml(data) {
 
   return `
     <div style="font-family:Arial,sans-serif; max-width:700px; margin:auto;">
-      <h2 style="color:#007bff; text-align:center;">🛞 Formulaire Création Pneumatique</h2>
+      <h2 style="color:#007bff; text-align:center;">🛞 Formulaire Création Pneumatique VL</h2>
       <table style="width:100%; border-collapse:collapse; margin-top:20px;">
         ${rows}
       </table>
@@ -80,9 +80,9 @@ app.post("/submit-form", upload.array("fichiers[]"), async (req, res) => {
   }));
 
   const mailOptions = {
-    from: `"Formulaire création" <${process.env.EMAIL_USER}>`,
+    from: `"Formulaire création VL" <${process.env.EMAIL_USER}>`,
     to: process.env.DEST_EMAIL,
-    subject: "📨Demande création référence Pneumatique",
+    subject: "📨Demande création référence Pneumatique VL",
     html: generateHtml(formData),
     attachments
   };
